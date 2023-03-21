@@ -23508,13 +23508,15 @@
   });
 
   // src/index.js
+  var import_react = __toESM(require_react());
+  var import_react_dom = __toESM(require_react_dom());
   var ReactDOMClient = __toESM(require_client());
   function App() {
-    return /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("h2", null, "This is a flask and react boilerplate"), /* @__PURE__ */ React.createElement("h2", null, "We use esbuild as a bundler as it is super fast"));
+    return /* @__PURE__ */ import_react.default.createElement("div", null, /* @__PURE__ */ import_react.default.createElement("h2", null, "This is a flask and react boilerplate"), /* @__PURE__ */ import_react.default.createElement("h2", null, "We use esbuild as a bundler as it is super fast"));
   }
   var container = document.getElementById("root");
   var root = ReactDOMClient.createRoot(container);
-  root.render(/* @__PURE__ */ React.createElement(App, null));
+  root.render(/* @__PURE__ */ import_react.default.createElement(App, null));
 })();
 /*! Bundled license information:
 
