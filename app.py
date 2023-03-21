@@ -8,8 +8,8 @@ CORS(app)
 
 @app.route('/')
 def index():
-    a = 7
-    return render_template('index.html', a=a)
+    msg = "hello ReactPy"
+    return render_template('index.html', msg=msg)
 
 if __name__=="__main__":
     app.run(debug=True)
