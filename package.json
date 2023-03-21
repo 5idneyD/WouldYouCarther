@@ -6,7 +6,7 @@
   "scripts": {
     "watch": "npx webpack --watch",
     "serve": "python app.py",
-    "build": "esbuild src/index.js --bundle --outfile=dist/index.js --loader:.js=jsx",
+    "build": "esbuild src/index.js --bundle --outfile=dist/index.js --loader:.js=jsx --drop:debugger --tree-shaking=true --minify",
     "esbuild:dev": "esbuild src/index.js --bundle --outfile=dist/index.js --loader:.js=jsx --watch",
     "dev": "npm-run-all --parallel esbuild:dev serve"
   },
