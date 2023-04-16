@@ -1,0 +1,15 @@
+/* The code in this file is used in both mobile and desktop css */
+/* Code you do not want to repeat goes here, such as colo[u]rs, font */
+
+@import url('https://fonts.googleapis.com/css2?family=Arsenal:wght@700&display=swap');
+
+:root {
+    --dark: #081526;
+    --light: #47e69e;
+}
+
+* {
+    font-family: 'Arsenal', sans-serif !important;
+    color: var(--light);
+    background-color: var(--dark);
+}
