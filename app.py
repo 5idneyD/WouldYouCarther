@@ -23,8 +23,9 @@ db = SQLAlchemy(app)
 class Cars(db.Model):
     __tablename__ = "Cars"
     id = db.Column(db.Integer, primary_key=True)
-    make = db.Column(db.String, nullable=False)
-    model = db.Column(db.String, nullable=False)
+    make = db.Column(db.String(16), nullable=False)
+    model = db.Column(db.String(32), nullable=False)
+    img = db.Column(db.String)
 
 class Records(db.Model):
     __tablename__ = "Records"
@@ -38,6 +39,20 @@ with app.app_context():
 
 @app.route('/')
 def index():
+    
+    
+    # with open("./database/data.json", "r") as q:
+    #     data = json.loads(q.read())
+    
+    # for info, href in data.items():
+    #     br = info.index("?")
+    #     make = info[:br]
+    #     model = info[br+1:]
+    #     img_link = href
+    #     car = Cars(make=make, model=model, img=img_link)
+    #     db.session.add(car)
+    # db.session.commit()
+    
     
     number_of_cars = len(Cars.query.all())
 

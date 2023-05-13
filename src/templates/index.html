@@ -13,9 +13,13 @@
 		<link defer rel="icon" type="image/x-icon" href="{{url_for('static', filename='images/favicon.ico')}}" />
 	</head>
 	<body>
+    <img class="car_image" src={{first_car.img}} alt="{{first_car.make}}, {{first_car.model}}">
+    <br>
 		{{first_car.make}}, {{first_car.model}}
     <br>
     {{second_car.make}}, {{second_car.model}}
+    <br>
+    <img class="car_image" src={{second_car.img}} alt="{{second_car.make}}, {{second_car.model}}">
 		<div id="root"></div>
 		<script src="{{ url_for('static', filename='jsx/index.js') }}"></script>
 		<script src="{{ url_for('static', filename='js/script.js') }}"></script>
