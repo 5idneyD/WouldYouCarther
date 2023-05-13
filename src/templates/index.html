@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Catch</title>
-    <link
+	<head>
+		<title>Catch</title>
+		<link
 			rel="stylesheet"
 			media="screen and (min-width: 601px)"
 			href="{{url_for('static', filename='css/main.min.css')}}" />
@@ -11,10 +11,13 @@
 			media="screen and (max-width: 600px)"
 			href="{{url_for('static', filename='css/mobile.min.css')}}" />
 		<link defer rel="icon" type="image/x-icon" href="{{url_for('static', filename='images/favicon.ico')}}" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script src="{{ url_for('static', filename='jsx/index.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-  </body>
+	</head>
+	<body>
+		{{first_car.make}}, {{first_car.model}}
+    <br>
+    {{second_car.make}}, {{second_car.model}}
+		<div id="root"></div>
+		<script src="{{ url_for('static', filename='jsx/index.js') }}"></script>
+		<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+	</body>
 </html>
