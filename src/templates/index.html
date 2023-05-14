@@ -1,27 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Catch</title>
-		<link
-			rel="stylesheet"
-			media="screen and (min-width: 601px)"
-			href="{{url_for('static', filename='css/main.min.css')}}" />
-		<link
-			rel="stylesheet"
-			media="screen and (max-width: 600px)"
-			href="{{url_for('static', filename='css/mobile.min.css')}}" />
-		<link defer rel="icon" type="image/x-icon" href="{{url_for('static', filename='images/favicon.ico')}}" />
-	</head>
-	<body>
-    <img class="car_image" src={{first_car.img}} alt="{{first_car.make}}, {{first_car.model}}">
-    <br>
-		{{first_car.make}}, {{first_car.model}}
-    <br>
-    {{second_car.make}}, {{second_car.model}}
-    <br>
-    <img class="car_image" src={{second_car.img}} alt="{{second_car.make}}, {{second_car.model}}">
-		<div id="root"></div>
-		<script src="{{ url_for('static', filename='jsx/index.js') }}"></script>
-		<script src="{{ url_for('static', filename='js/script.js') }}"></script>
-	</body>
+
+<head>
+  <title>Would You Carther</title>
+  <link rel="stylesheet" media="screen and (min-width: 601px)"
+    href="{{url_for('static', filename='css/main.min.css')}}" />
+  <link rel="stylesheet" media="screen and (max-width: 600px)"
+    href="{{url_for('static', filename='css/mobile.min.css')}}" />
+  <link defer rel="icon" type="image/x-icon" href="{{url_for('static',
+      filename='images/favicon.ico')}}" />
+</head>
+
+<body>
+  <h1>Would You Carther</h1>
+
+  <div id="container">
+
+    <img id="car_image1" src="{{first_car.img}}" alt="{{first_car.make}},
+        {{first_car.model}}" />
+    <div>
+      <form method="POST">
+        <input id="car1loser" name="car1loser" value="{{second_car.make}}, {{second_car.model}}"
+          style="display: none">
+        <input type="submit" id="car1" name="car1" value="{{first_car.make}}, {{first_car.model}}" />
+
+        <p>
+          <!-- This is a car <br>
+          It is the first car <br> -->
+        <span class="result">
+          {{first_car_wins}}%
+        </span>
+        </p>
+    </div>
+    <div>
+
+      <input id="car2loser" name="car2loser" value="{{first_car.make}}, {{first_car.model}}"
+        style="display: none">
+      <input type="submit" id="car2" name="car2" value="{{second_car.make}}, {{second_car.model}}" />
+
+      </form>
+      <p>
+        <!-- This is another car <br>
+        It is the second car <br> -->
+        <span class="result">
+        {{second_car_wins}}%
+      </span>
+      </p>
+    </div>
+    <img id="car_image2" src="{{second_car.img}}" alt="{{second_car.make}},
+        {{second_car.model}}" />
+
+  </div>
+  </form>
+  <!-- <div id="root"></div> -->
+  <script src="{{ url_for('static', filename='jsx/index.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+  <script>
+    let results = document.querySelectorAll(".result");
+
+    results.forEach(function(result){
+      result.style.display = "None";
+    })
+
+    let submitButtons = document.querySelectorAll("input[type='submit']");
+    submitButtons.forEach(function(e){
+      e.addEventListener("click", function(){
+        results.forEach(function(result){
+          result.style.display = "block"
+        })
+      })
+    }) 
+
+  </script>
+</body>
+
 </html>

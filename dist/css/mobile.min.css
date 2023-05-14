@@ -1,1 +1,1 @@
-@import"https://fonts.googleapis.com/css2?family=Arsenal:wght@700&display=swap";:root{--dark: #081526;--light: #47e69e}*{font-family:Arsenal,sans-serif!important;color:var(--light);background-color:var(--dark)}*{text-align:center;margin-top:2%;padding:0% 5%}
+@import"https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap";:root{--dark: #1e3047;--light: #ddc070}*{font-family:Libre Baskerville,serif;font-weight:lighter;color:var(--light);background-color:var(--dark)}*{text-align:center;margin-top:2%;padding:0% 5%}
